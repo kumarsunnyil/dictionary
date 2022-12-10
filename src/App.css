@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.search-text {
+  color:red;
+}
+
+.pocket-dictionary {
+  background-color: #78838f
+}
+
+.audio-player {
+  width: 60%;
+  margin-left: 20%;
+}
+
+.phonetic-text {
+  font-style: italic;
+  color: black;
+}
