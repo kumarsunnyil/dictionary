@@ -5,10 +5,10 @@ const Definition = ({ all }) => {
     <>
       {all.map((Val) => {
         return Val.meanings.map((Means) => {
-          return Means.definitions.map((Def) => {
+          return Means.definitions.map((Def, id) => {
             return (
               <>
-                <li className="text-capitalize fs-5 text-start">
+                <li className="list-group-item text-capitalize fs-5 text-start" key={id}>
                   {Def.definition}
                 </li>
                 <hr />

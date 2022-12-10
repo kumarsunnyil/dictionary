@@ -5,10 +5,11 @@ import Select from "./components/select.component";
 
 function App() {
   const [word, setWord] = useState();
-  const [all, setAll] = useState([]);
-  const [main, setMain] = useState([]);
   const [audio, setAudio] = useState();
   const [phonetic, setPhonetic] = useState();
+
+  const [all, setAll] = useState([]);
+  const [main, setMain] = useState([]);
 
   const dataApi = async () => {
     const data = await fetch(
@@ -17,7 +18,7 @@ function App() {
     const dataJson = await data.json();
     setAll(dataJson);
     setMain(dataJson[0]);
-    
+
     const url = dataJson[0].phonetics[0].audio;
     const phoneticText = dataJson[0].phonetic;
 
@@ -36,9 +37,8 @@ function App() {
 
   const handleKeyPress = (event) => {
     if (event.keyCode == 13) {
-      Search()
+      Search();
     }
-      
   };
   return (
     <div className="App">
@@ -68,7 +68,7 @@ function App() {
       </div>
       <div className="row">
         {word === "" ? (
-          <Select all={all} main={main} audio={audio} phonetic= {phonetic} />
+          <Select all={all} main={main} audio={audio} phonetic={phonetic} />
         ) : (
           <div className="fs-1 text-capitalize text-center fw-bold text-decoration-underline text-white bg-dark extra">
             type a word in the box
